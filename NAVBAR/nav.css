@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,html{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    font-family: monospace;
+}
+
+.container{
+    background-color: rgb(46, 46, 46);
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50%;
+    border-radius: 12px;
+    padding: 1rem 0.8rem;
+    box-shadow: 0 0 10px rgba(46, 46, 46, 0.568), 0 0 10px rgba(47, 47, 47, 0.476);
+}
+header{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background: linear-gradient(to right, #000000, #090909);
+
+}
+.logo img{
+    height: 70px;
+    width: 66px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 33px;
+}
+
+nav ul li{
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+}
+
+nav ul li::after{
+       content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0%;
+      height: 2px;
+      background: #d5d5d5; /* sky blue */
+      transition: width 0.3s ease;
+      border-radius: 2px;
+}
+
+   nav ul li:hover {
+      color: #9d9d9d;
+    }
+
+    nav ul li:hover::after {
+      width: 100%;
+    }
+
+.get-started button{
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.get-started button:nth-child(1):hover{
+    background-color: rgb(185, 185, 185);
+    color: rgb(65, 65, 65);
+}
+
+.get-started button:nth-child(2){
+    background-color: rgb(18, 18, 18);
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.get-started button:nth-child(2):hover{
+     background-color: rgb(31, 31, 31);
+    color: rgb(164, 164, 164);
+}
+
+main{
+    height: calc(100% - 50px);
+    background: linear-gradient(to right, #000000, #151515);
+    color: #FFFFFF;
+}
