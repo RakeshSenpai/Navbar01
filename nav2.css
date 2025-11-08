@@ -85,3 +85,11 @@ ul{
     display: flex;
     align-items: center;
 }
+
+.nav-icons svg {
+    height: 22px;
+    width: 22px;
+    stroke: #333;
+    stroke-width: 2;
+    fill: none;
+}
