@@ -144,3 +144,8 @@ ul{
     transition: all 0.3s ease-in-out;
     display: inline-block;
 }
+
+.mega-column ul li a:hover {
+    color: #d32f2f;
+}
+
