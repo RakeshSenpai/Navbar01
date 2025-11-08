@@ -1,0 +1,331 @@
+@font-face {
+    font-family: baba-sukranu;
+    src: url(HMSlussenVariable[TITL\,wdth\,wght].ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, 
+body {
+    height: 100%;
+    width: 100%;
+    font-family: baba-sukranu, sans-serif;
+    background-color: #000000;
+    color: #111;
+}
+
+
+body{
+    overflow-x: hidden;
+}
+
+header{
+    width: 100%;
+    background: transparent;
+}
+
+header:hover{
+    background: #ffffff;
+}
+
+.top-banner {
+    background: #2d2d2d;
+    color: white;
+    padding: 8px 0;
+    text-align: center;
+    font-size: 12px;
+}
+
+nav{
+display: flex;
+width: 100%;
+padding: 1.2rem 2.5rem;
+justify-content: space-between;
+align-items: center;
+position: relative;
+}
+
+.logo{
+    text-decoration: none;
+    color: #ff1313;
+}
+
+ul{
+    list-style: none;
+}
+
+.nav-links{
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links li{
+    color: #ff1313;
+    font-size: 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ff1313;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    font-weight: 400;
+    transition: color 0.3s;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover {
+    color: #d32f2f;
+}
+
+.nav-links a.sale {
+    color: #d32f2f;
+}
+
+.nav-icons{
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    position: relative;
+}
+
+.nav-icons button{
+    border: none;
+    padding: 5px;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+
+.nav-icons svg {
+    height: 22px;
+    width: 22px;
+    stroke: #ff1313;
+    stroke-width: 2;
+    fill: none;
+}
+
+.account{
+    position: absolute;
+    top: 100%;
+    right: -28%;
+    max-width: 250px;
+    width: 200px;
+    padding: 1.8rem;
+    display: flex;
+    transform: translateX(200px);
+    overflow: hidden;
+    flex-direction: column;
+    gap: 1.4rem;
+    z-index: 99999;
+    transition: all 0.5s ease;
+    background: black;
+
+    a{
+        text-decoration: none;
+        color: #ffffff;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+.account.open{
+    display: flex;
+    transform: translateX(0px);
+
+}
+
+    .mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    padding: 0 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 1000;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, padding 0.4s ease-in-out;
+    display: flex;
+    }
+
+.mega-menu.active {
+    max-height: 90vh;
+    min-height: 40vh;
+    opacity: 1;
+    padding: 40px;
+}
+
+
+.mega-column {
+    flex: 1;
+    padding: 0 30px;
+}
+
+.mega-column h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.mega-column ul li {
+    margin-bottom: 12px;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.mega-column ul li a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    letter-spacing: 1.2px;
+}
+
+
+
+.mega-column ul li a:hover {
+    color: #d32f2f;
+}
+
+main{
+    min-height: calc(100vh - 102px);
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 8vw ;
+    padding-left: 8vw ;
+}
+
+.container{
+    padding: 2rem;
+    h1{
+        font-size: 4vw;
+        color: #ff1313;
+    }
+    p{
+        font-size: 1.2rem;
+        color: #ff1313;
+        font-weight: 400;
+        line-height: 2rem;
+    }
+}
+
+.buttons{
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.2rem;
+    button{
+        border: none;
+        background: none;
+        color: #d32f2f;
+        padding: 0.6rem 0;
+        border-bottom: 1px solid rgb(122, 0, 0);
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover{
+        border-bottom: 1px solid rgb(235, 0, 0);
+        color: #ff1313;
+
+        }
+    }
+}
+
+.texts a.shiping{
+    display: inline-block;
+    color: #ff1313;
+    margin-top: 1.2rem;
+}
+
+
+
+#gifts{
+    height: 70vh;
+    background-color: #fff;
+}
+
+.gift-items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    h4{
+        margin-top: 2rem;
+        font-weight: 300;
+        color: #ff1313;
+        letter-spacing: 1.2px;
+    }
+
+    button{
+        margin-top: 2rem;
+       border: none;
+        background: none;
+        padding: 0.4rem 0;
+        border-bottom: 1px solid rgb(122, 0, 0);
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        a{
+            text-decoration: none;
+        color: #d32f2f;
+        }
+        &:hover{
+        border-bottom: 1px solid rgb(235, 0, 0);
+        color: #ff1313;
+
+        }
+        
+    }
+}
+
+.gift-items h1{
+    text-align: center;
+    font-size: 12vw;
+    line-height: 10vw;
+    color: #ff1313 ;
+    font-weight: 400;
+}
+
+  .hamburger-menu{
+    display: none;
+    color: #fff;
+  }
+
+  
+  /* Enhanced mobile responsiveness */
+  @media (max-width: 768px) {
+
+    nav{
+      display: none;
+    }
+    .hamburger-menu{
+      display: block;
+    }
+    .dripspace-login {
+      align-items: flex-start;
+      padding-top: max(40px, 8vh);
+    }
+    
+    .login-container {
+      margin: 0 auto;
+    }
+  }
