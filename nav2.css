@@ -76,3 +76,12 @@ ul{
     gap: 1.5rem;
     align-items: center;
 }
+.nav-icons button{
+    border: none;
+    padding: 5px;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
