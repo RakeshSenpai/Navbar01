@@ -231,6 +231,12 @@
                 currentMenu = menuElm
             }
         }
+        function hideMenu(){
+            if(currentMenu){
+                currentMenu.classList.remove('active')
+                currentMenu = null
+            }
+        }
     </script>
 </body>
 </html>
