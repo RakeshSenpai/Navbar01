@@ -129,3 +129,18 @@ ul{
     margin-bottom: 20px;
     color: #333;
 }
+
+
+.mega-column ul li {
+    margin-bottom: 12px;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.mega-column ul li a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+}
