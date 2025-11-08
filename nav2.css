@@ -110,3 +110,10 @@ ul{
     transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, padding 0.4s ease-in-out;
     display: flex;
     }
+
+    .mega-menu.active {
+    max-height: 90vh;
+    min-height: 40vh;
+    opacity: 1;
+    padding: 40px;
+    }
