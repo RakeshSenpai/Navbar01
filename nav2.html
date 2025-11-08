@@ -218,5 +218,19 @@
 
     </nav>
     </header>
+
+
+    <script>
+        let currentMenu = null
+
+        function showMenu(menu){
+            hideMenu()
+            const menuElm = document.getElementById(menu + '-menu') 
+            if(menuElm){
+                menuElm.classList.add('active')
+                currentMenu = menuElm
+            }
+        }
+    </script>
 </body>
 </html>
