@@ -1,4 +1,7 @@
-<link rel="stylesheet" href="test.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="test.css">
+
 <div class="cn-nav-wrapper">
   <nav class="cn-navbar">
     
@@ -9,19 +12,19 @@
       </a>
     </div>
 
-    <div class="cn-nav-central">
+    <div class="cn-nav-central" id="navCenter">
       <div class="cn-pill-group">
         <div class="cn-nav-indicator" id="cnIndicator"></div>
-        <a href="" class="cn-nav-link active" data-index="0">Explore</a>
-        <a href="" class="cn-nav-link" data-index="1">Community</a>
-        <a href="" class="cn-nav-link" data-index="2">Trending</a>
+        <a href="#" class="cn-nav-link active" data-index="0">Explore</a>
+        <a href="#" class="cn-nav-link" data-index="1">Community</a>
+        <a href="#" class="cn-nav-link" data-index="2">Trending</a>
       </div>
     </div>
 
     <div class="cn-nav-actions">
       <div class="cn-auth-group">
-        <a href="" class="cn-btn-text">Login</a>
-        <a href="" class="cn-btn-primary">Join Now</a>
+        <a href="#" class="cn-btn-text">Login</a>
+        <a href="#" class="cn-btn-primary">Join Now</a>
       </div>
 
       <div class="cn-v-divider"></div>
@@ -38,11 +41,11 @@
             <span class="cn-user-role">Premium Member</span>
           </div>
           <div class="cn-drop-body">
-            <a href="" class="cn-drop-item"><i>👤</i> Profile</a>
-            <a href="" class="cn-drop-item"><i>🔖</i> Saved Notes</a>
-            <a href="" class="cn-drop-item"><i>📤</i> Uploads</a>
+            <a href="#" class="cn-drop-item"><i>👤</i> Profile</a>
+            <a href="#" class="cn-drop-item"><i>🔖</i> Saved Notes</a>
+            <a href="#" class="cn-drop-item"><i>📤</i> Uploads</a>
             <div class="cn-drop-sep"></div>
-            <a href="" class="cn-drop-item cn-logout"><i>👋</i> Logout</a>
+            <a href="#" class="cn-drop-item cn-logout"><i>👋</i> Logout</a>
           </div>
         </div>
       </div>
@@ -55,8 +58,70 @@
 
   </nav>
 </div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="footer-logo-icon">C</div>
+        <span class="footer-logo-text">CrowdNotes</span>
+      </div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores rerum ratione necessitatibus animi ducimus rem pariatur, sunt alias repudiandae dignissimos, a sed magnam reprehenderit ab?</p>
+      <div class="social-icons">
+        <a href="#" class="social-icon">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="#" class="social-icon">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="#" class="social-icon">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#" class="social-icon">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <h3>Product</h3>
+      <ul class="footer-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Resources</h3>
+      <ul class="footer-links">
+        <li><a href="#docs">Documentation</a></li>
+        <li><a href="#guides">Guides</a></li>
+        <li><a href="#api">API</a></li>
+        <li><a href="#support">Support</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Company</h3>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#careers">Careers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 CrowdNotes. All rights reserved. Built for students, by students.</p>
+  </div>
+</footer>
+
 <script>
-    // Fix messy indicator logic
+  // Navigation indicator logic
   const items = document.querySelectorAll('.cn-nav-link');
   const indicator = document.getElementById('cnIndicator');
 
@@ -67,20 +132,26 @@
 
   // Set initial position
   const activeItem = document.querySelector('.cn-nav-link.active');
-  if (activeItem) moveIndicator(activeItem);
+  if (activeItem && window.innerWidth > 768) moveIndicator(activeItem);
 
   items.forEach(item => {
-    item.addEventListener('mouseenter', (e) => moveIndicator(e.target));
+    item.addEventListener('mouseenter', (e) => {
+      if (window.innerWidth > 768) moveIndicator(e.target);
+    });
     item.addEventListener('mouseleave', () => {
-      moveIndicator(document.querySelector('.cn-nav-link.active'));
+      if (window.innerWidth > 768) {
+        moveIndicator(document.querySelector('.cn-nav-link.active'));
+      }
     });
     item.addEventListener('click', function(e) {
+      e.preventDefault();
       items.forEach(i => i.classList.remove('active'));
       this.classList.add('active');
+      if (window.innerWidth > 768) moveIndicator(this);
     });
   });
 
-  // Clean Dropdown Logic
+  // Dropdown Logic
   const profileBtn = document.getElementById('cnProfileBtn');
   const dropdown = document.getElementById('cnDropdown');
 
@@ -94,5 +165,32 @@
   document.addEventListener('click', () => {
     dropdown.classList.remove('active');
     profileBtn.querySelector('.cn-chevron').style.transform = 'rotate(0)';
+  });
+
+  // Mobile Menu Toggle
+  const menuToggle = document.getElementById('cnMobileBtn');
+  const navCenter = document.getElementById('navCenter');
+
+  menuToggle.addEventListener('click', () => {
+    navCenter.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!navCenter.contains(e.target) && !menuToggle.contains(e.target)) {
+      navCenter.classList.remove('active');
+      menuToggle.classList.remove('active');
+    }
+  });
+
+  // Close mobile menu when clicking a link
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        navCenter.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
   });
 </script>
