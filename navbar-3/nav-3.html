@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="nav-3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Academics</title>
+</head>
+<body>
+  <div class="starfield" id="starfield"></div>
+
+  <!-- Navigation------
+    -->
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <div class="logo-icon">C</div>
+        <span class="logo-text">CrowdNotes</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-center" id="navCenter">
+        <a href="#" class="nav-link active">Explore</a>
+        <a href="#" class="nav-link">Community</a>
+        <a href="#" class="nav-link">Trending</a>
+      </div>
+
+      <div class="nav-right">
+        <button class="login-btn">Login</button>
+        <button class="join-btn">Join Now</button>
+        <button class="profile-btn"><i class="fa-solid fa-circle-user"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ---Hero Section==== -->
+  <section class="hero">
+    <div class="badge">DATABASE</div>
+    <div class="verify-badge">PEER VERIFIED</div>
+    <div class="version">THE FUTURE OF ACADEMICS</div>
+    <h1>UPLOAD.</h1>
+  </section>
+
+  <!-- Footer======= -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">C</div>
+          <span class="footer-logo-text">CrowdNotes</span>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores rerum ratione necessitatibus animi ducimus rem pariatur, sunt alias repudiandae dignissimos, a sed magnam reprehenderit ab?</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" class="social-icon">
+<i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Product</h3>
+        <ul class="footer-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#security">Security</a></li>
+          <li><a href="#roadmap">Roadmap</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Resources</h3>
+        <ul class="footer-links">
+          <li><a href="#docs">Documentation</a></li>
+          <li><a href="#guides">Guides</a></li>
+          <li><a href="#api">API</a></li>
+          <li><a href="#support">Support</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Company</h3>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 CrowdNotes. All rights reserved. Built for students, by students.</p>
+    </div>
+  </footer>
+
+
+  <script>
+    // Hamburger menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navCenter = document.getElementById('navCenter');
+
+    menuToggle.addEventListener('click', () => {
+      navCenter.classList.toggle('active');
+    });
+
+    // Generate starfield
+    const starfield = document.getElementById('starfield');
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.animationDelay = Math.random() * 3 + 's';
+      starfield.appendChild(star);
+    }
+  </script>
+</body>
+</html>
