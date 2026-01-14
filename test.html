@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="test.css">
+<div class="cn-nav-wrapper">
+  <nav class="cn-navbar">
+    
+    <div class="cn-brand">
+      <a href="" class="cn-logo-container">
+        <div class="cn-logo-mark"></div>
+        <span class="cn-logo-text">Crowd<span>Notes</span></span>
+      </a>
+    </div>
+
+    <div class="cn-nav-central">
+      <div class="cn-pill-group">
+        <div class="cn-nav-indicator" id="cnIndicator"></div>
+        <a href="" class="cn-nav-link active" data-index="0">Explore</a>
+        <a href="" class="cn-nav-link" data-index="1">Community</a>
+        <a href="" class="cn-nav-link" data-index="2">Trending</a>
+      </div>
+    </div>
+
+    <div class="cn-nav-actions">
+      <div class="cn-auth-group">
+        <a href="" class="cn-btn-text">Login</a>
+        <a href="" class="cn-btn-primary">Join Now</a>
+      </div>
+
+      <div class="cn-v-divider"></div>
+
+      <div class="cn-profile-zone">
+        <button class="cn-profile-trigger" id="cnProfileBtn">
+          <img src="https://api.dicebear.com/7.x/beta-pictus/svg?seed=Crowd" alt="Avatar" class="cn-avatar">
+          <svg class="cn-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+
+        <div class="cn-dropdown-menu" id="cnDropdown">
+          <div class="cn-drop-header">
+            <span class="cn-user-name">Alex Rivera</span>
+            <span class="cn-user-role">Premium Member</span>
+          </div>
+          <div class="cn-drop-body">
+            <a href="" class="cn-drop-item"><i>👤</i> Profile</a>
+            <a href="" class="cn-drop-item"><i>🔖</i> Saved Notes</a>
+            <a href="" class="cn-drop-item"><i>📤</i> Uploads</a>
+            <div class="cn-drop-sep"></div>
+            <a href="" class="cn-drop-item cn-logout"><i>👋</i> Logout</a>
+          </div>
+        </div>
+      </div>
+
+      <button class="cn-mobile-toggle" id="cnMobileBtn">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </nav>
+</div>
+<script>
+    // Fix messy indicator logic
+  const items = document.querySelectorAll('.cn-nav-link');
+  const indicator = document.getElementById('cnIndicator');
+
+  function moveIndicator(el) {
+    indicator.style.width = `${el.offsetWidth}px`;
+    indicator.style.left = `${el.offsetLeft}px`;
+  }
+
+  // Set initial position
+  const activeItem = document.querySelector('.cn-nav-link.active');
+  if (activeItem) moveIndicator(activeItem);
+
+  items.forEach(item => {
+    item.addEventListener('mouseenter', (e) => moveIndicator(e.target));
+    item.addEventListener('mouseleave', () => {
+      moveIndicator(document.querySelector('.cn-nav-link.active'));
+    });
+    item.addEventListener('click', function(e) {
+      items.forEach(i => i.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Clean Dropdown Logic
+  const profileBtn = document.getElementById('cnProfileBtn');
+  const dropdown = document.getElementById('cnDropdown');
+
+  profileBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    dropdown.classList.toggle('active');
+    profileBtn.querySelector('.cn-chevron').style.transform = 
+      dropdown.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0)';
+  });
+
+  document.addEventListener('click', () => {
+    dropdown.classList.remove('active');
+    profileBtn.querySelector('.cn-chevron').style.transform = 'rotate(0)';
+  });
+</script>
